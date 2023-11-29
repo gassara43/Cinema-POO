@@ -2,39 +2,48 @@
 
 class Acteur extends Personne
 {
-    private string $_NomPersonnageJouer;
-    private array $_filmographie = [];
+    // private string $_NomPersonnageJouer;
+    // private array $_filmographie = [];
+    private array $castings;
 
     public function __construct(string $nomPersonnage, string $nom, string $prenom, string $sexe, string $naissance)
     {
         parent::__construct($nom, $prenom, $sexe, $naissance);
-        $this->_NomPersonnageJouer = $nomPersonnage;
+         $this->_NomPersonnageJouer = $nomPersonnage;//modifier et remodifier
+
+        $this->castings = [];
     }
 
-    public function ajouterFilm(Film $film)
+    // public function ajouterFilm(Film $film)
+    // {
+    //     $this->_filmographie[] = $film;
+    // }
+
+    public function ajouterCasting(Casting $casting)
     {
-        $this->_filmographie[] = $film;
+        $this->castings[] = $casting;
     }
 
     public function listerFilmographie()
     {
         $filmographie = [];
-        foreach ($this->_filmographie as $film) {
-            $filmographie[] = $film->getTitre();
+        foreach ($this->castings as $casting) {
+            $filmographie[] = $casting->getFilm()->getTitre();
         }
         return $filmographie;
     }
 
     // Getters et Setters spécifiques à Acteur
-    public function getNomPersonnage()
+
+     public function getNomPersonnage()//la fonction getNompersonnage à modifier et à modifier
     {
         return $this->_NomPersonnageJouer;
-    }
+     }
 
-    public function setNomPersonnage($personnage)
-    {
-        $this->_NomPersonnageJouer = $personnage;
-    }
+    // public function setNomPersonnage($personnage)
+    // {
+    //     $this->_NomPersonnageJouer = $personnage;
+    // }
 }
 
 /*

@@ -26,10 +26,9 @@ class Film
 
     }
 
-    public function ajouterActeur(Acteur $acteur, string $role)
+    public function ajouterCasting(Casting $casting)
     {
-        $acteur->ajouterFilm($this);
-        
+        $this->_castings[] = $casting;
     }
 
     // Getters et Setters pour les propriétés 

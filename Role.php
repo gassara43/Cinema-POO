@@ -1,8 +1,9 @@
 <?php
 class Role
 {
-    private Acteur $_Acteurs;
+    // private Acteur $_Acteurs;
     private string $_Peronnage_jouee;
+    
     public function __construct(Acteur $_Acteurs,string $_Peronnage_jouee)
     {
         $this->_Acteurs = $_Acteurs;

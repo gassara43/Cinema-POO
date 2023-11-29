@@ -7,6 +7,7 @@ require_once 'Realisateur.php';
 require_once 'Genre.php';
 require_once 'Film.php';
 require_once 'Role.php';
+require_once 'Casting.php';
 
 /*
 il pratique d'utiliser l'objet DateTime si on veut les minupler ,ça devient facile.
@@ -23,6 +24,7 @@ les methodes avec (->) cette flèche pour accèder un element de la classe.
  echo $acteur3->getNom()." ".$acteur3->getPrenom()."<br>";
 /********************************************************************************************************************** */
 
+ /*
  $realisateur = new Realisateur('George', 'Cloony', 'Homme', '1961-05-06');
  $genre = new Genre('Action');
 $film = new Film('Star Wars Episode IV', new DateTime('1977-05-25'), 121, $realisateur, $genre);
@@ -36,6 +38,7 @@ echo $acteurIncarne2->getNomPersonnage()." a été incarné par ".$acteurIncarne
 
 /*************************************************************************************************************** */
 // Exemple d'utilisation pour lister les films par genre
+/*
 $scienceFiction = new Genre('Science-Fiction');
 $starWars = new Film('Star Wars', new DateTime('1977-05-25'), 121, $realisateur, $scienceFiction);
 $bladeRunner = new Film('Blade Runner', new DateTime('1982-06-25'), 117, $realisateur, $scienceFiction);
@@ -47,10 +50,11 @@ $scienceFiction->afficherFilmsParGenre();
 
 
 
+
 // Créez des instances de films, acteurs, réalisateurs, genres, etc.
 
 // Créer un genre
-$actionGenre = new Genre('Action');
+/*$actionGenre = new Genre('Action');
 
 // Créer des réalisateurs
 $realisateurBatman = new Realisateur('Tim', 'Burton', 'Homme', '1958-08-25');
@@ -79,6 +83,7 @@ foreach ($filmographieActeur as $titreFilm) {
 
 
 // Créer un genre "Aventure"
+/*
 $aventureGenre = new Genre('Aventure');
 
 // Créer un réalisateur
@@ -95,28 +100,40 @@ $filmographieRealisateur = $georgeLucas->afficherFilmographie();
 // Créez des instances de films, acteurs, réalisateurs, genres, etc.
 
 // Créer un réalisateur
-$georgeLucas = new Realisateur('Lucas', 'George', 'Homme', '1944-05-14');
+//$georgeLucas = new Realisateur('Lucas', 'George', 'Homme', '1944-05-14');
 
 // Créer un genre "Science-Fiction"
-$scienceFiction = new Genre('Science-Fiction');
+//$scienceFiction = new Genre('Science-Fiction');
 
 // Créer un film
-$starWars = new Film('Star Wars', new DateTime('1977-05-25'), 121, $georgeLucas, $scienceFiction, 'Une galaxie lointaine, très lointaine...');
+//$starWars = new Film('Star Wars', new DateTime('1977-05-25'), 121, $georgeLucas, $scienceFiction, 'Une galaxie lointaine, très lointaine...');
 
 
 // Afficher les informations sur le film
-$starWars->afficherInfoFilm();
+//$starWars->afficherInfoFilm();
 
 /**********************************************************************************************************/
 //Créez un genre "Aventure"
-$aventureGenre = new Genre('Aventure');
+//$aventureGenre = new Genre('Aventure');
 
 // Créez des films associés à ce genre
-$starWars = new Film('Star Wars', new DateTime('1977-05-25'), 121, $realisateur, $aventureGenre);
+/*$starWars = new Film('Star Wars', new DateTime('1977-05-25'), 121, $realisateur, $aventureGenre);
 $indianaJones = new Film('Indiana Jones', new DateTime('1981-06-12'), 115, $realisateur, $aventureGenre);
 
 // Affichage des films associés à ce genre
 $aventureGenre->afficherFilmsParGenre();
+
+/**********************************************************************************************************/
+
+/*$harrisonFord = new Acteur();
+
+$hanSolo = new Role();
+
+// création d'un Casting
+$castingStarWars = new Casting($starWars, $harrisonFord, $hanSolo); // film, acteur, role
+*/
+
+
 ?>
 
 
